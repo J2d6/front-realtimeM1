@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadcfcb7-174a-4d74-bda9-b3eea2e62d76" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/screens/InputEmptyDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/screens/ModifyStudentScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/XmlParser.java" afterDir="false" />
+    <list default="true" id="eadcfcb7-174a-4d74-bda9-b3eea2e62d76" name="Changes" comment="- Change version number for jaxb&#10;- Add etudiant done ( local only)&#10;- Dialog Null inputs done&#10;-">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/JNBApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/HelloController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/AppViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/AppViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputsButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputsButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ModifyOrDeleteButtonsRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ModifyOrDeleteButtonsRow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/TableFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/TableFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/screens/ModifyStudentScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/screens/ModifyStudentScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +63,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "Application.JNBApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "xmlparser",
@@ -85,6 +83,15 @@
       <option name="presentableId" value="Default" />
       <updated>1716884686357</updated>
     </task>
+    <task id="LOCAL-00001" summary="- Change version number for jaxb&#10;- Add etudiant done ( local only)&#10;- Dialog Null inputs done&#10;-">
+      <option name="closed" value="true" />
+      <created>1717310441557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717310441557</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,5 +104,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Change version number for jaxb&#10;- Add etudiant done ( local only)&#10;- Dialog Null inputs done&#10;-" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Change version number for jaxb&#10;- Add etudiant done ( local only)&#10;- Dialog Null inputs done&#10;-" />
   </component>
 </project>

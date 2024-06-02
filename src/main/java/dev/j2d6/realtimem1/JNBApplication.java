@@ -1,7 +1,6 @@
 package dev.j2d6.realtimem1;
 
 import dev.j2d6.realtimem1.data.AppViewModel;
-import dev.j2d6.realtimem1.data.Etudiant;
 import dev.j2d6.realtimem1.ui.AppBar;
 import dev.j2d6.realtimem1.ui.ConnectionStatusRow;
 import dev.j2d6.realtimem1.ui.InputRow;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class  HelloApplication extends Application {
+public class JNBApplication extends Application {
     public AppViewModel state;
     @Override
     public void start(Stage stage) throws IOException {
@@ -52,7 +51,7 @@ public class  HelloApplication extends Application {
         HBox table = etudiantListTable.factor();
 
         //Footer
-        ConnectionStatusRow footer = new ConnectionStatusRow(10);
+        ConnectionStatusRow footer = new ConnectionStatusRow(10, state);
         footer.mount();
 
         //layout
@@ -61,6 +60,7 @@ public class  HelloApplication extends Application {
         Scene mainScene = new Scene(layout, 800,550);
         stage.setTitle("JNB");
         stage.setScene(mainScene);
+        stage.setResizable(false);
         stage.show();
     }
 }

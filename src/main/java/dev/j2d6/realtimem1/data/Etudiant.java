@@ -2,7 +2,9 @@ package dev.j2d6.realtimem1.data;
 
 //import javax.xml.bind.annotation.XmlElement;
 
-public class Etudiant {
+import javafx.beans.property.ObjectProperty;
+
+public class Etudiant  {
     private String matricule;
     private String nom;
     private String adresse ;

@@ -2,7 +2,7 @@ package dev.j2d6.realtimem1.ui;
 
 import dev.j2d6.realtimem1.data.AppViewModel;
 import dev.j2d6.realtimem1.data.Etudiant;
-import javafx.beans.value.ObservableValue;
+import javafx.beans.property.Property;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -68,7 +68,12 @@ public class TableFactory {
         HBox.setHgrow(studentsTable, Priority.ALWAYS);
         layout.setAlignment(Pos.CENTER);
 
-
+        studentsTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            state.selectedStudentProperty = newValue;
+        });
+//        state.selectedStudentProperty.bindBidirectional(
+//                (Property<Etudiant>) studentsTable.getSelectionModel().selectedItemProperty()
+//        );
         //data
         studentsTable.setItems(state.etudiantsList);
         return layout;

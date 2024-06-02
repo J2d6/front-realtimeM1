@@ -1,6 +1,8 @@
 package dev.j2d6.realtimem1.data;
 
 import dev.j2d6.realtimem1.utilities.XmlParser;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -19,7 +21,7 @@ public class AppViewModel {
     public StringProperty adressStringPRoperty ;
     public StringProperty matriculeStringProperty;
     public StringProperty bourseStringProperty ;
-
+    public Etudiant selectedStudentProperty;
 
     File xmlFileData;
 
@@ -32,6 +34,7 @@ public class AppViewModel {
         this.matriculeStringProperty = new SimpleStringProperty("");
         this.bourseStringProperty = new SimpleStringProperty("");
         this.etudiantsList = FXCollections.observableArrayList();
+
     }
 
 
