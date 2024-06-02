@@ -1,6 +1,8 @@
 package dev.j2d6.realtimem1.ui;
 
+import dev.j2d6.realtimem1.data.AppViewModel;
 import dev.j2d6.realtimem1.data.Etudiant;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,11 +14,11 @@ import javafx.scene.layout.Priority;
 
 public class TableFactory {
     private  ObservableList items;
+    public AppViewModel state;
 
 
-
-    public TableFactory (ObservableList items) {
-        this.items = items ;
+    public TableFactory (AppViewModel state) {
+        this.state = state;
     }
 
     public HBox factor() {
@@ -66,6 +68,9 @@ public class TableFactory {
         HBox.setHgrow(studentsTable, Priority.ALWAYS);
         layout.setAlignment(Pos.CENTER);
 
+
+        //data
+        studentsTable.setItems(state.etudiantsList);
         return layout;
     }
 }

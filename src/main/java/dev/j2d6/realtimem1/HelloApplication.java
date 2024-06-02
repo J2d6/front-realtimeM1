@@ -1,70 +1,54 @@
 package dev.j2d6.realtimem1;
 
+import dev.j2d6.realtimem1.data.AppViewModel;
 import dev.j2d6.realtimem1.data.Etudiant;
-import dev.j2d6.realtimem1.data.Product;
 import dev.j2d6.realtimem1.ui.AppBar;
 import dev.j2d6.realtimem1.ui.ConnectionStatusRow;
 import dev.j2d6.realtimem1.ui.InputRow;
 import dev.j2d6.realtimem1.ui.TableFactory;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Separator;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-
 import java.io.IOException;
 
-public class HelloApplication extends Application {
-
+public class  HelloApplication extends Application {
+    public AppViewModel state;
     @Override
     public void start(Stage stage) throws IOException {
+       buildUI(stage);
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    private void buildUI (Stage stage) {
+
+        //STATE
+        this.state = new AppViewModel();
+
         //APPBAR
         AppBar appBar = new AppBar("JNB");
         appBar.mount();
         Separator separator = new Separator();
         separator.setOrientation(Orientation.HORIZONTAL);
         //InputsRow
-        InputRow inputsRow = new InputRow(10);
+        InputRow inputsRow = new InputRow(10, state);
         inputsRow.mount();
 
+        // APP STATE
+        AppViewModel viewModel = new AppViewModel();
 
 
-        //tableView - Etudiants
-        ObservableList<Etudiant> etudiantsListe = FXCollections.observableArrayList(
-          new Etudiant(
-                  "2318",
-                  "RAZAKAMANANTSOA Dimbiniaina Jordany",
-                  "Villa HD Game Ampitankely",
-                  211000
-          ),
-          new Etudiant(
-                  "2299",
-                  "ZAFINDRAZANAKA Marie Jeannette Rakotoniaina",
-                  "Analamahintsy Antananarivo",
-                  500000
-          )     ,
-          new Etudiant(
-                  "2587",
-                  "Miza Tommy",
-                  "RDI - Fianarantsoa",
-                  211000
-          )      ,
-                new Etudiant(
-                        "7894",
-                        "RASAMOELINA Bien Aimé Patrick",
-                        "Tanambao Fianrantsoa",
-                        211000
-                )
-        );
-        TableFactory etudiantListTable = new TableFactory(etudiantsListe);
+
+
+        TableFactory etudiantListTable = new TableFactory(state);
+        System.out.println(this.state);
         HBox table = etudiantListTable.factor();
 
         //Footer
@@ -78,9 +62,5 @@ public class HelloApplication extends Application {
         stage.setTitle("JNB");
         stage.setScene(mainScene);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

@@ -1,13 +1,12 @@
 package dev.j2d6.realtimem1.ui;
 
+import dev.j2d6.realtimem1.data.AppViewModel;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 
 
 public class InputRow extends HBox {
@@ -16,9 +15,13 @@ public class InputRow extends HBox {
     TextField addressInput;
     TextField bourseInput ;
     InputsButtons inputsButton ;
+    public AppViewModel state;
 
 
-    public InputRow() {
+    public InputRow(
+            AppViewModel state
+    ) {
+
     }
 
     public InputRow(double v, Node... nodes) {
@@ -29,11 +32,14 @@ public class InputRow extends HBox {
         super(nodes);
     }
 
-    public InputRow(double v) {
+    public InputRow(double v, AppViewModel state) {
         super(v);
+        this.state = state;
     }
 
     public void mount () {
+
+
         this.addressInput = new TextField();
         this.addressInput.setPrefWidth(250f);
         addressInput.setPromptText("Adresse");
@@ -52,7 +58,7 @@ public class InputRow extends HBox {
         matriculeInput.setPromptText("Matricule");
 
 
-        inputsButton = new InputsButtons(5);
+        inputsButton = new InputsButtons(5, state, this);
         inputsButton.mount();
         this.getChildren().addAll(
           matriculeInput,
@@ -68,6 +74,11 @@ public class InputRow extends HBox {
         });
 
 
+
+        namesInput.textProperty().bindBidirectional(state.nameStringProperty);
+        matriculeInput.textProperty().bindBidirectional(state.matriculeStringProperty);
+        addressInput.textProperty().bindBidirectional(state.adressStringPRoperty);
+        bourseInput.textProperty().bindBidirectional(state.bourseStringProperty);
 
     }
 }

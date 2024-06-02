@@ -1,5 +1,7 @@
 package dev.j2d6.realtimem1.data;
 
+//import javax.xml.bind.annotation.XmlElement;
+
 public class Etudiant {
     private String matricule;
     private String nom;
@@ -12,7 +14,7 @@ public class Etudiant {
         this.adresse = adresse;
         this.bourse = bourse;
     }
-
+    //@XmlElement
     public String getAdresse() {
         return adresse;
     }
@@ -20,7 +22,7 @@ public class Etudiant {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
+    //@XmlElement
     public String getNom() {
         return nom;
     }
@@ -28,7 +30,7 @@ public class Etudiant {
     public void setNom(String nom) {
         this.nom = nom;
     }
-
+    // @XmlElement
     public String getMatricule() {
         return matricule;
     }
@@ -36,7 +38,7 @@ public class Etudiant {
     public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
-
+    //@XmlElement
     public int getBourse() {
         return bourse;
     }
