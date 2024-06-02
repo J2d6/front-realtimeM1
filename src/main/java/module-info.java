@@ -1,6 +1,7 @@
 module dev.j2d6.realtimem1 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.xml.bind;
 
 
     opens dev.j2d6.realtimem1 to javafx.fxml;

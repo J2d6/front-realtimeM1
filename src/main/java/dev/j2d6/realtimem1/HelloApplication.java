@@ -26,6 +26,42 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        try {
+            buildUI(stage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void buildUI (Stage stage) {
+
+
+        //tableView - Etudiants
+        ObservableList<Etudiant> etudiantsListe = FXCollections.observableArrayList(
+                new Etudiant(
+                        "2318",
+                        "RAZAKAMANANTSOA Dimbiniaina Jordany",
+                        "Villa HD Game Ampitankely",
+                        211000
+                ),
+                new Etudiant(
+                        "2299",
+                        "ZAFINDRAZANAKA Marie Jeannette Rakotoniaina",
+                        "Analamahintsy Antananarivo",
+                        500000
+                )     ,
+                new Etudiant(
+                        "2587",
+                        "Miza Tommy",
+                        "RDI - Fianarantsoa",
+                        211000
+                )      ,
+                new Etudiant(
+                        "7894",
+                        "RASAMOELINA Bien Aimé Patrick",
+                        "Tanambao Fianrantsoa",
+                        211000
+                )
+        );
         //APPBAR
         AppBar appBar = new AppBar("JNB");
         appBar.mount();
@@ -35,35 +71,6 @@ public class HelloApplication extends Application {
         InputRow inputsRow = new InputRow(10);
         inputsRow.mount();
 
-
-
-        //tableView - Etudiants
-        ObservableList<Etudiant> etudiantsListe = FXCollections.observableArrayList(
-          new Etudiant(
-                  "2318",
-                  "RAZAKAMANANTSOA Dimbiniaina Jordany",
-                  "Villa HD Game Ampitankely",
-                  211000
-          ),
-          new Etudiant(
-                  "2299",
-                  "ZAFINDRAZANAKA Marie Jeannette Rakotoniaina",
-                  "Analamahintsy Antananarivo",
-                  500000
-          )     ,
-          new Etudiant(
-                  "2587",
-                  "Miza Tommy",
-                  "RDI - Fianarantsoa",
-                  211000
-          )      ,
-                new Etudiant(
-                        "7894",
-                        "RASAMOELINA Bien Aimé Patrick",
-                        "Tanambao Fianrantsoa",
-                        211000
-                )
-        );
         TableFactory etudiantListTable = new TableFactory(etudiantsListe);
         HBox table = etudiantListTable.factor();
 
