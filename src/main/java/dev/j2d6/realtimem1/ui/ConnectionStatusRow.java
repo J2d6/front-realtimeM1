@@ -19,7 +19,7 @@ public class ConnectionStatusRow extends HBox {
     }
 
     public void mount() {
-        status = new ConnectionStatusComponent(10);
+        status = new ConnectionStatusComponent(10, this.state);
         status.mount();
         DM = new ModifyOrDeleteButtonsRow(10, state);
         DM.mount();

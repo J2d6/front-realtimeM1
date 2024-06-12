@@ -1,10 +1,7 @@
 package dev.j2d6.realtimem1.data;
 
 import dev.j2d6.realtimem1.utilities.XmlParser;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -22,6 +19,7 @@ public class AppViewModel {
     public StringProperty matriculeStringProperty;
     public StringProperty bourseStringProperty ;
     public Etudiant selectedStudentProperty;
+    public BooleanProperty connectionStatusProperty;
 
     File xmlFileData;
 
@@ -34,6 +32,7 @@ public class AppViewModel {
         this.matriculeStringProperty = new SimpleStringProperty("");
         this.bourseStringProperty = new SimpleStringProperty("");
         this.etudiantsList = FXCollections.observableArrayList();
+        this.connectionStatusProperty = new SimpleBooleanProperty(true);
 
     }
 
@@ -107,5 +106,13 @@ public class AppViewModel {
         );
 
         etudiantsList.addAll(etudiantsListPropertyInXml);
+    }
+
+    public boolean getConnexionStatus() {
+        return connectionStatusProperty.get();
+    }
+
+    public void setConnexionStatus (boolean connexionStatus) {
+        this.connectionStatusProperty.set(connexionStatus);
     }
 }
