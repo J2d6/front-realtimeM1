@@ -5,7 +5,10 @@ import dev.j2d6.realtimem1.data.Etudiant;
 import dev.j2d6.realtimem1.ui.screens.InputEmptyDialog;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
 
 public class InputsButtons extends VBox {
@@ -56,11 +59,18 @@ public class InputsButtons extends VBox {
                 e -> {
                         if (
                                 state.nameStringProperty.get().isEmpty() ||
-                            state.bourseStringProperty.get().isEmpty() ||
-                            state.matriculeStringProperty.get().isEmpty() ||
-                            state.adressStringPRoperty.get().isEmpty()
+                                state.bourseStringProperty.get().isEmpty() ||
+                                state.matriculeStringProperty.get().isEmpty() ||
+                                state.adressStringPRoperty.get().isEmpty()
                         ) {
-                            InputEmptyDialog.display();
+                            ButtonType okButton = new ButtonType("OK");
+                            ButtonType cancelButton = new ButtonType("Annuler", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                            Alert alert = new Alert(Alert.AlertType.ERROR, "Voulez-vous continuer ?", okButton, cancelButton);
+//                            alert.setTitle("");
+                            alert.setHeaderText("Tous les champs doivent être remplis !");
+                            alert.setContentText("");
+                            alert.showAndWait();
                         } else  {
                             state.addEtudiant(
                                 state.nameStringProperty.get(),

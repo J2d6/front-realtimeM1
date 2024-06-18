@@ -1,14 +1,18 @@
 package dev.j2d6.realtimem1.data;
 
-//import javax.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-import javafx.beans.property.ObjectProperty;
-
-public class Etudiant  {
+@XmlRootElement
+public class Etudiant {
     private String matricule;
     private String nom;
-    private String adresse ;
+    private String adresse;
     private int bourse;
+
+    // Constructeur sans argument par défaut
+    public Etudiant() {
+    }
 
     public Etudiant(String matricule, String nom, String adresse, int bourse) {
         this.matricule = matricule;
@@ -16,7 +20,8 @@ public class Etudiant  {
         this.adresse = adresse;
         this.bourse = bourse;
     }
-    //@XmlElement
+
+    @XmlElement
     public String getAdresse() {
         return adresse;
     }
@@ -24,7 +29,8 @@ public class Etudiant  {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-    //@XmlElement
+
+    @XmlElement
     public String getNom() {
         return nom;
     }
@@ -32,7 +38,8 @@ public class Etudiant  {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    // @XmlElement
+
+    @XmlElement
     public String getMatricule() {
         return matricule;
     }
@@ -40,7 +47,8 @@ public class Etudiant  {
     public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
-    //@XmlElement
+
+    @XmlElement
     public int getBourse() {
         return bourse;
     }

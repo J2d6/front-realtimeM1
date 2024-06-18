@@ -1,18 +1,23 @@
 package dev.j2d6.realtimem1.data;
 
-import dev.j2d6.realtimem1.utilities.XmlParser;
+
+import dev.j2d6.realtimem1.utilities.Constants;
+import dev.j2d6.realtimem1.utilities.EtudiantFeatures.CreateEtudiant;
+import dev.j2d6.realtimem1.utilities.xmlFeatures.XMLParser;
+import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class AppViewModel {
 
-    private XmlParser xmlParser ;
-    private ObservableList<Etudiant> etudiantsListPropertyInXml ;
-    private ObservableList<Etudiant> getEtudiantsListPropertyInDB ;
+    public XMLParser xmlParser ;
+    public ObservableList<Etudiant> etudiantsListPropertyInXml ;
+    public ObservableList<Etudiant> getEtudiantsListPropertyInDB ;
     public ObservableList<Etudiant> etudiantsList ;
     public StringProperty nameStringProperty ;
     public StringProperty adressStringPRoperty ;
@@ -25,14 +30,14 @@ public class AppViewModel {
 
    // CONSTRUCTOR
     public AppViewModel () {
-        this.xmlParser = new XmlParser();
-        this.xmlFileData = new File("data.xml");
+        this.xmlParser = new XMLParser();
+        this.xmlFileData = Constants.xmlFileData;
         this.nameStringProperty = new SimpleStringProperty("");
         this.adressStringPRoperty = new SimpleStringProperty("");
         this.matriculeStringProperty = new SimpleStringProperty("");
         this.bourseStringProperty = new SimpleStringProperty("");
         this.etudiantsList = FXCollections.observableArrayList();
-        this.connectionStatusProperty = new SimpleBooleanProperty(true);
+        this.connectionStatusProperty = new SimpleBooleanProperty(false);
 
     }
 
@@ -46,11 +51,11 @@ public class AppViewModel {
         this.etudiantsList = etudiantsList;
     }
 
-    public XmlParser getXmlParser() {
+    public XMLParser getXmlParser() {
         return xmlParser;
     }
 
-    public void setXmlParser(XmlParser xmlParser) {
+    public void setXmlParser(XMLParser xmlParser) {
         this.xmlParser = xmlParser;
     }
 
@@ -70,6 +75,8 @@ public class AppViewModel {
         this.getEtudiantsListPropertyInDB = getEtudiantsListPropertyInDB;
     }
 
+
+
     //CRUD
     public void addEtudiant(
             String name,
@@ -78,6 +85,9 @@ public class AppViewModel {
             String matricule
 
     ) {
+        CreateEtudiant etudiantCreator = new CreateEtudiant(this);
+        etudiantCreator.create(name, address, matricule, bourse);
+
         this.etudiantsList.add(
                 new Etudiant(
                         matricule,name,address,bourse
@@ -99,11 +109,24 @@ public class AppViewModel {
         // Get all in DB -> etudiantsListInDB **TASK AND UPDATE UI AFTER**
 
 //         Get all inxml -> etudiantsListInXML **NOT TASK BUT DISPLAY FIRST**
-        Etudiants etudiantsListInXMLWrapper = xmlParser.unmarshalAll(xmlFileData);
-        etudiantsListPropertyInXml.addAll(
-                etudiantsListInXMLWrapper.eleves.isEmpty() ?
-                        etudiantsListInXMLWrapper.eleves : null
-        );
+        this.xmlParser.factory();
+        Etudiants etudiantsListInXMLWrapper = new Etudiants();
+        this.etudiantsListPropertyInXml = FXCollections.observableArrayList();
+
+        if (!(this.xmlFileData == null || !this.xmlFileData.exists() || this.xmlFileData.length() == 0)) {
+            System.out.println("FICHIER NON VIDE");
+            try {
+                etudiantsListInXMLWrapper = xmlParser.unmarshalAll(Constants.xmlFileData);
+                etudiantsListPropertyInXml.addAll (
+
+                                etudiantsListInXMLWrapper.getEleves()
+                );
+            } catch (JAXBException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("FICHIER VIDE");
+        }
 
         etudiantsList.addAll(etudiantsListPropertyInXml);
     }

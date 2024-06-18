@@ -21,7 +21,7 @@ public class ConnectionStatusChecker extends Task<Boolean> {
         try {
             while (true) {
                 // Simuler une requête réseau ou une opération de longue durée
-                Thread.sleep(50000); // Simuler un délai de 2 secondes
+                Thread.sleep(300000); // Simuler un délai de 2 secondes
 
                 // Simuler une réponse qui alterne entre true et false
                 boolean response = Math.random() > 0.5;

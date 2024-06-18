@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadcfcb7-174a-4d74-bda9-b3eea2e62d76" name="Changes" comment="- Bindings for modifying">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/Connector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/connections/ConnectionStatusChecker.java" afterDir="false" />
+    <list default="true" id="eadcfcb7-174a-4d74-bda9-b3eea2e62d76" name="Changes" comment="- Done : Connection status checker&#10;- add connectionsStatus attribute to the viewModel">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/EtudiantFeatures/CreateEtudiant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/EtudiantFeatures/DeleteEtudiant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/EtudiantFeatures/ReadEtudiant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/EtudiantFeatures/ReadEtudiants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/EtudiantFeatures/UpdateEtudiant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/xmlFeatures/XMLParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/JNBApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/JNBApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/AppViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/AppViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ConnectionStatusRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/data/Etudiants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputsButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/InputsButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ModifyOrDeleteButtonsRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/ui/ModifyOrDeleteButtonsRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/XmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/connections/ConnectionStatusChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/j2d6/realtimem1/utilities/connections/ConnectionStatusChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -96,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717317248310</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Done : Connection status checker&#10;- add connectionsStatus attribute to the viewModel">
+      <option name="closed" value="true" />
+      <created>1718183445978</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718183445978</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +129,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="xmlparser" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -125,6 +144,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Change version number for jaxb&#10;- Add etudiant done ( local only)&#10;- Dialog Null inputs done&#10;-" />
     <MESSAGE value="- Bindings for modifying" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Bindings for modifying" />
+    <MESSAGE value="- Done : Connection status checker&#10;- add connectionsStatus attribute to the viewModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Done : Connection status checker&#10;- add connectionsStatus attribute to the viewModel" />
   </component>
 </project>

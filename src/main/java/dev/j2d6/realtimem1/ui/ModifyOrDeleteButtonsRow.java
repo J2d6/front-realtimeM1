@@ -2,6 +2,7 @@ package dev.j2d6.realtimem1.ui;
 
 import dev.j2d6.realtimem1.data.AppViewModel;
 import dev.j2d6.realtimem1.ui.screens.ModifyStudentScreen;
+import dev.j2d6.realtimem1.utilities.EtudiantFeatures.DeleteEtudiant;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
@@ -31,6 +32,13 @@ public class ModifyOrDeleteButtonsRow extends HBox {
         modifyButton.setOnAction(
                 e -> {
                     ModifyStudentScreen.display(state.selectedStudentProperty);
+                }
+        );
+
+        deleteButton.setOnAction(
+                e -> {
+                    DeleteEtudiant deleter = new DeleteEtudiant(this.state);
+                    deleter.delete(this.state.selectedStudentProperty);
                 }
         );
     }

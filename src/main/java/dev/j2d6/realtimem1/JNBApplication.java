@@ -30,6 +30,7 @@ public class JNBApplication extends Application {
 
         //STATE
         this.state = new AppViewModel();
+        this.state.init();
 
         //APPBAR
         AppBar appBar = new AppBar("JNB");
@@ -40,8 +41,7 @@ public class JNBApplication extends Application {
         InputRow inputsRow = new InputRow(10, state);
         inputsRow.mount();
 
-        // APP STATE
-        AppViewModel viewModel = new AppViewModel();
+
 
 
 
