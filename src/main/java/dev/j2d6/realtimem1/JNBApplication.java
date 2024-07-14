@@ -63,4 +63,5 @@ public class JNBApplication extends Application {
         stage.setResizable(false);
         stage.show();
     }
+
 }
